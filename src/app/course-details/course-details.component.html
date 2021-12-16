@@ -1,0 +1,18 @@
+<div *ngIf= "course" class="well hoverwell thumbnail">
+    <h2>{{course.name}}</h2>
+    <div>Date: {{course.date}}</div>
+    <div [ngSwitch]="course.time">Time: {{course.time}}
+        <span *ngSwitchCase= "'08:00 AM'"> (Early Time)</span>
+        <span *ngSwitchCase= "'09:00 AM'"> (Normal Time)</span>
+        <span *ngSwitchDefault>(Late Time)</span>
+    </div>
+    <div>Price: ${{course.price}}</div>
+    <div *ngIf="course.location">
+        <span>Location : {{course.location.address}}</span>
+        <span class="pad-left"></span>
+        <span>{{course.location.city}} , {{course.location.country}}</span>
+    </div>
+    <div *ngIf="course.onlineUrl">
+        OnlineUrl: {{course.onlineUrl}}
+    </div>
+</div>
